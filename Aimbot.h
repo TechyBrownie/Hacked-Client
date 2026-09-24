@@ -33,6 +33,15 @@ void Aimbot::onPostRender(C_MinecraftUIRenderContext* rederCtx) {
   if (entlist == nullptr)
     return;
   size_t listSize = entList->getListSize();
+  C_LocalPlayer* serverSide = g_Data.getEntitySize();
+  if (serverside == nullptr)
+    return;
+  if (localPlayer > 1005){
+    return;
+  }
+  if (entList > 10000){
+    return;
+  }
 
   if (listSize > 1000){
     return;
@@ -71,8 +80,8 @@ void Aimbot::onPostRender(C_MinecraftUIRenderContext* rederCtx) {
       if (!this->lock) {
         appl.x /= (100.f - verticalspeed);
         appl.y /= (100.f - horizontalspeed);
-        if (appl.x >= 1 || appl.x <= -1) appl.div(abs(appl.x));
-        if (appl.y >= 1 || appl.y <= -1) appl.div(abs(appl.y));
+        if (appl.x >= 4 || appl.x <= -8) appl.div(abs(appl.x));
+        if (appl.y >= 3.7 || appl.y <= -8) appl.div(abs(appl.y));
       }
       if (!vertical)
         appl.x = 0;
